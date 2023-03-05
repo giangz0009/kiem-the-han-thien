@@ -1,0 +1,346 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 62.5%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #232323;
+  background-image: url("../images/back-ground.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-block: 80px;
+}
+.main-wrapper .lucky-roll-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../images/lucky-roll-frame.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 500px;
+  padding-bottom: 50px;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-main {
+  margin-top: 110px;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-main .lucky-roll-main__rolation {
+  position: relative;
+  padding-inline: 75px;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-main .lucky-roll-main__rolation img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-main .lucky-roll-main__rolation .lucky-roll-main__reward {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(calc(-50% - 1px), -50%);
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-main .lucky-roll-main__rolation .lucky-roll-main__reward img {
+  width: 40px;
+  height: 85px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-inline: 12px;
+  margin-top: 30px;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn .lucky-roll-btn__roll-info {
+  padding: 18px 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 170px;
+  height: 52px;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn .lucky-roll-btn__roll-info p {
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn .lucky-roll-btn__roll-info p span {
+  font-size: inherit;
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn .lucky-roll-btn__roll-info.lucky-roll-btn__roll-number {
+  background-image: url("../images/btn-left.png");
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn .lucky-roll-btn__roll-info.lucky-roll-btn__curr-point {
+  background-image: url("../images/btn-right.png");
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn .lucky-roll-btn__roll-action {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-btn .lucky-roll-btn__roll-action img {
+  --size: 60px;
+  width: var(--size);
+  height: var(--size);
+}
+.main-wrapper .exchange-wrapper .exchange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__logo {
+  width: 80%;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__logo img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-empty-block {
+  width: 80%;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-empty-block img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main > p {
+  width: 90%;
+  color: #000000;
+  text-align: center;
+  font-weight: bold;
+  padding-block: 12px;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.6);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list {
+  width: 100%;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item {
+  display: flex;
+  flex-direction: column;
+  width: 124px;
+  height: 172px;
+  background-image: url("../images/exchange-frame.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: repeat;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__btn {
+  display: flex;
+  justify-content: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__btn button {
+  text-indent: -9999px;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__btn button {
+  width: 40px;
+  height: 30px;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__body {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__body .gift-img {
+  --size: 36px;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__body .gift-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__body > p {
+  color: #d4b591;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding-inline: 8px;
+  padding-top: 12px;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__body > p span {
+  font-size: inherit;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.main-wrapper .exchange-wrapper .exchange .exchange__main .exchange__main-gifts-list .exchange__main-gift-item-wrapper .exchange__main-gift-item .exchange__main-gift-item__name p {
+  width: 100%;
+  color: #d4b591;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-align: center;
+  text-transform: capitalize;
+}

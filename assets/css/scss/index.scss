@@ -1,0 +1,228 @@
+@import "../reset";
+
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  // height: 100vh;
+  background-color: #232323;
+  background-image: url("../images/back-ground.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-block: 80px;
+  // Start Rotation
+  .lucky-roll-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .lucky-roll {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: url("../images/lucky-roll-frame.png");
+      background-position: center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      max-width: 500px;
+      padding-bottom: 50px;
+      .lucky-roll-main {
+        margin-top: 110px;
+        .lucky-roll-main__rolation {
+          position: relative;
+          padding-inline: 75px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+          .lucky-roll-main__reward {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(calc(-50% - 1px), -50%);
+            img {
+              width: 40px;
+              height: 85px;
+              object-fit: contain;
+              object-position: center;
+            }
+          }
+        }
+      }
+      .lucky-roll-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-inline: 12px;
+        margin-top: 30px;
+        .lucky-roll-btn__roll-info {
+          padding: 18px 20px;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 170px;
+          height: 52px;
+          p {
+            text-align: center;
+            width: 100%;
+            color: #ffffff;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            font-weight: bold;
+            span {
+              font-size: inherit;
+            }
+          }
+          &.lucky-roll-btn__roll-number {
+            background-image: url("../images/btn-left.png");
+          }
+          &.lucky-roll-btn__curr-point {
+            background-image: url("../images/btn-right.png");
+          }
+        }
+        .lucky-roll-btn__roll-action {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          img {
+            --size: 60px;
+            width: var(--size);
+            height: var(--size);
+          }
+        }
+      }
+    }
+  }
+  // End Rotation
+  // Start Exchange
+  .exchange-wrapper {
+    .exchange {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .exchange__logo {
+        width: 80%;
+        img {
+          width: 100%;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+      .exchange__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .exchange__main-empty-block {
+          width: 80%;
+          img {
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+        & > p {
+          width: 90%;
+          color: #000000;
+          text-align: center;
+          font-weight: bold;
+          padding-block: 12px;
+          text-shadow: 1px 1px rgba(255, 255, 255, 0.6);
+          font-size: 1.6rem;
+          line-height: 1.6;
+        }
+        .exchange__main-gifts-list {
+          width: 100%;
+          .exchange__main-gift-item-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 8px;
+            .exchange__main-gift-item {
+              display: flex;
+              flex-direction: column;
+              width: 124px;
+              height: 172px;
+              background-image: url("../images/exchange-frame.png");
+              background-size: 100% 100%;
+              background-position: center;
+              background-repeat: repeat;
+              .exchange__main-gift-item__btn {
+                display: flex;
+                justify-content: center;
+                button {
+                  text-indent: -9999px;
+                }
+                button {
+                  width: 40px;
+                  height: 30px;
+                  outline: none;
+                  border: none;
+                  background: transparent;
+                }
+              }
+              .exchange__main-gift-item__body {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .gift-img {
+                  --size: 36px;
+                  width: var(--size);
+                  height: var(--size);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 12px;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                  }
+                }
+                & > p {
+                  color: #d4b591;
+                  font-size: 1rem;
+                  font-weight: 600;
+                  text-align: center;
+                  padding-inline: 8px;
+                  padding-top: 12px;
+                  span {
+                    font-size: inherit;
+                  }
+                }
+              }
+              .exchange__main-gift-item__name {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                p {
+                  width: 100%;
+                  color: #d4b591;
+                  font-size: 0.9rem;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;
+                  text-align: center;
+                  text-transform: capitalize;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // End Exchange
+}
