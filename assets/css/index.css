@@ -129,6 +129,7 @@ table {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .main-wrapper .lucky-roll-wrapper .lucky-roll {
   display: flex;
