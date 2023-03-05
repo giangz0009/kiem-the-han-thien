@@ -227,3 +227,112 @@
   }
   // End Exchange
 }
+
+.modal {
+  .modal-dialog {
+    max-width: 583px !important;
+  }
+  .modal-content {
+    background-color: transparent;
+  }
+  .popup-log {
+    width: 100%;
+    height: 577px;
+    background-image: url("../images/login-frame.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    .log-tabs {
+      display: flex;
+      justify-content: center;
+      padding-top: 120px;
+      gap: 24px;
+      .log-tab {
+        display: inline-block;
+        button {
+          width: 160px;
+          height: 50px;
+          background: url("../images/btn-group.png") bottom left no-repeat;
+          outline: none;
+          border: none;
+          color: #ffda00;
+          text-transform: uppercase;
+          font-size: 1.4rem;
+          font-weight: 600;
+          &:hover {
+            background: url("../images/btn-group.png") bottom right no-repeat;
+          }
+        }
+        &.log-tab--active {
+          button {
+            background: url("../images/btn-group.png") bottom right no-repeat;
+          }
+        }
+      }
+    }
+    .log-pannels {
+      padding-block: 24px;
+      .log-pannel {
+        width: 340px;
+        margin: 0 auto;
+        .form-group {
+          padding-block: 8px;
+          label {
+            font-size: 1.8rem;
+            display: inline-block;
+            width: 100%;
+            font-weight: 500;
+            color: #8b744d;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+          }
+          .form-input {
+            input {
+              padding: 5px 10px;
+              width: 100%;
+              height: 36px;
+              border: 2px solid #54462e;
+              font-size: 16px;
+              background: #3f3118;
+              outline: none;
+              color: #ffda00;
+            }
+          }
+        }
+        .actions-group {
+          display: flex;
+          justify-content: space-around;
+          padding-block: 8px;
+          a {
+            display: inline-block;
+            margin-top: 5px;
+            line-height: 18px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #ffd908;
+            border-bottom: 1px solid #ffd908;
+          }
+        }
+        .submit-btn {
+          button {
+            display: block;
+            float: none;
+            width: 160px;
+            height: 53px;
+            line-height: 53px;
+            margin: 30px auto 0px auto;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #caa66d;
+            background: url("../images/btn-group.png") top left no-repeat;
+            border: 0px;
+            cursor: pointer;
+            &:hover {
+              background: url("../images/btn-group.png") top right no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}
