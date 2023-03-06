@@ -14,6 +14,17 @@ const luckyRollActionBtn = luckyRollElm.querySelector(
   ".lucky-roll-btn__roll-action"
 );
 const luckyDisc = document.querySelector("#luckyDisc");
+const rollTurn = luckyRollElm.querySelector(
+  ".lucky-roll-btn__roll-info.lucky-roll-btn__roll-number p span"
+);
+const rollPoint = luckyRollElm.querySelector(
+  ".lucky-roll-btn__roll-info.lucky-roll-btn__curr-point p span"
+);
+// ---- Exchange Lists
+const exchangeList = document.querySelector(".exchange__main-gifts-list");
+const exchangeItems = exchangeList.querySelectorAll(
+  ".exchange__main-gift-item"
+);
 
 // Pub Class
 class App {
@@ -22,6 +33,7 @@ class App {
   #degPerItem;
   #totalItem;
   #numberOfTurn;
+  #currPoint;
 
   constructor() {
     this.#isLogin = true;
@@ -29,6 +41,7 @@ class App {
     this.#baseDeg = 20;
     this.#degPerItem = 360 / this.#totalItem;
     this.#numberOfTurn = 1;
+    this.#currPoint = 200;
   }
 
   handleClickLoginTab() {
@@ -136,9 +149,12 @@ class App {
 
   handleClickLuckyRollBtn = () => {
     // Nếu chưa đăng nhập thì mở modal đăng nhập
+
     if (!this.#isLogin) toggleModalBtn.click();
     else {
       if (this.#numberOfTurn > 0) {
+        luckyRollActionBtn.disabled = true;
+
         const randomRevolutions = Math.floor(Math.random() * 50);
         const randomReward = Math.floor(Math.random() * 10);
 
@@ -148,11 +164,36 @@ class App {
           360 * randomRevolutions;
 
         luckyDisc.style.transform = `rotate(${deg}deg)`;
+
+        setTimeout(() => {
+          luckyRollActionBtn.disabled = false;
+          this.notiReward(`Chúc mừng, bạn nhận được ...`);
+        }, 3000);
       } else {
         alert("Bạn không đủ lượt quay!");
       }
     }
   };
+
+  handleClickExchangeBtn(pointToExchange) {
+    return () => {
+      if (this.#currPoint >= pointToExchange) {
+        // Call API đổi thưởng
+
+        this.#currPoint -= pointToExchange;
+
+        this.renderLuckyRollInfo();
+
+        this.notiReward("Đổi thành công!");
+      } else {
+        this.notiReward("Chưa đủ điểm để đổi!");
+      }
+    };
+  }
+
+  notiReward(noti) {
+    alert(noti);
+  }
 
   handleEvents() {
     loginTabBtn.addEventListener("click", this.handleClickLoginTab);
@@ -160,9 +201,31 @@ class App {
     loginSubmitBtn.addEventListener("click", this.handleSubmitLogin);
     resSubmitBtn.addEventListener("click", this.handleSubmitRes);
     luckyRollActionBtn.addEventListener("click", this.handleClickLuckyRollBtn);
+    exchangeItems.forEach((item) => {
+      const exchangeBtn = item.querySelector(
+        ".exchange__main-gift-item__btn button"
+      );
+
+      const randomPoint = Math.floor(Math.random() * 600);
+
+      exchangeBtn.addEventListener(
+        "click",
+        this.handleClickExchangeBtn(randomPoint)
+      );
+    });
+  }
+
+  renderLuckyRollInfo() {
+    rollPoint.innerHTML = this.#currPoint;
+    rollTurn.innerHTML = this.#numberOfTurn;
+  }
+
+  render() {
+    this.renderLuckyRollInfo();
   }
 
   start() {
+    this.render();
     this.handleEvents();
   }
 }
