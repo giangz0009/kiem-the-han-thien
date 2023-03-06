@@ -157,6 +157,7 @@ table {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  transition: all 3s ease-in-out;
 }
 .main-wrapper .lucky-roll-wrapper .lucky-roll .lucky-roll-main .lucky-roll-main__rolation .lucky-roll-main__reward {
   position: absolute;
@@ -415,6 +416,11 @@ table {
   outline: none;
   color: #ffda00;
 }
+.modal .popup-log .log-pannels .log-pannel .form-group .err-mess p {
+  color: red;
+  font-size: 1.2rem;
+  padding-block: 4px;
+}
 .modal .popup-log .log-pannels .log-pannel .actions-group {
   display: flex;
   justify-content: space-around;
@@ -445,4 +451,16 @@ table {
 }
 .modal .popup-log .log-pannels .log-pannel .submit-btn button:hover {
   background: url("../images/btn-group.png") top right no-repeat;
+}
+.modal .popup-log .log-pannels.log-pannels--login .log-pannel__login {
+  display: block;
+}
+.modal .popup-log .log-pannels.log-pannels--login .log-pannel__register {
+  display: none;
+}
+.modal .popup-log .log-pannels.log-pannels--register .log-pannel__login {
+  display: none;
+}
+.modal .popup-log .log-pannels.log-pannels--register .log-pannel__register {
+  display: block;
 }

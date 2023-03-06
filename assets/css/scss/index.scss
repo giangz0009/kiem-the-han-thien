@@ -37,6 +37,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: all 3s ease-in-out;
           }
           .lucky-roll-main__reward {
             position: absolute;
@@ -298,6 +299,13 @@
               color: #ffda00;
             }
           }
+          .err-mess {
+            p {
+              color: red;
+              font-size: 1.2rem;
+              padding-block: 4px;
+            }
+          }
         }
         .actions-group {
           display: flex;
@@ -331,6 +339,22 @@
               background: url("../images/btn-group.png") top right no-repeat;
             }
           }
+        }
+      }
+      &.log-pannels--login {
+        .log-pannel__login {
+          display: block;
+        }
+        .log-pannel__register {
+          display: none;
+        }
+      }
+      &.log-pannels--register {
+        .log-pannel__login {
+          display: none;
+        }
+        .log-pannel__register {
+          display: block;
         }
       }
     }

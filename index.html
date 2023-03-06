@@ -26,7 +26,11 @@
               <div class="lucky-roll">
                 <div class="lucky-roll-main">
                   <div class="lucky-roll-main__rolation">
-                    <img src="./assets/images/rolation.png" alt="Rolation" />
+                    <img
+                      id="luckyDisc"
+                      src="./assets/images/rolation.png"
+                      alt="Rolation"
+                    />
                     <div class="lucky-roll-main__reward">
                       <img src="./assets/images/pos-reward.png" alt="Reward" />
                     </div>
@@ -254,10 +258,12 @@
     </div>
     <div>
       <button
+        id="toggleModalBtn"
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
+        style="display: none"
       >
         Launch demo modal
       </button>
@@ -276,13 +282,13 @@
               <div class="popup-log">
                 <ul class="log-tabs">
                   <li class="log-tab log-tab--active">
-                    <button>Đăng nhập</button>
+                    <button id="loginTab">Đăng nhập</button>
                   </li>
                   <li class="log-tab">
-                    <button>Đăng ký</button>
+                    <button id="resTab">Đăng ký</button>
                   </li>
                 </ul>
-                <div class="log-pannels">
+                <div class="log-pannels log-pannels--login">
                   <div class="log-pannel log-pannel__login">
                     <div class="form-group">
                       <label for="taikhoan">*Tài khoản:</label>
@@ -311,10 +317,47 @@
                       <a href="#">Quên OTP?</a>
                     </div>
                     <div class="submit-btn">
-                      <button type="submit">Đăng nhập</button>
+                      <button id="loginSubmit" type="submit">Đăng nhập</button>
                     </div>
                   </div>
-                  <div class="log-pannel log-pannel__register"></div>
+                  <div class="log-pannel log-pannel__register">
+                    <div class="form-group">
+                      <label for="taikhoan">*Tài khoản</label>
+                      <div class="form-input">
+                        <input
+                          id="taikhoan"
+                          type="text"
+                          placeholder="Chập nhận ký tự a-z, 0-9"
+                        />
+                      </div>
+                      <div class="err-mess"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="matkhau">*Mật khâu:</label>
+                      <div class="form-input">
+                        <input
+                          id="matkhau"
+                          type="password"
+                          placeholder="Nhập ít nhất 6 ký tự"
+                        />
+                      </div>
+                      <div class="err-mess"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="xacNhanMatKhau">*Xác Mật khâu:</label>
+                      <div class="form-input">
+                        <input
+                          id="xacNhanMatKhau"
+                          type="password"
+                          placeholder="Nhập ít nhất 6 ký tự"
+                        />
+                      </div>
+                      <div class="err-mess"></div>
+                    </div>
+                    <div class="submit-btn">
+                      <button id="resSubmit" type="submit">Đăng ký</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -330,12 +373,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script type="module">
-      import { Toast } from "bootstrap.esm.min.js";
-
-      Array.from(document.querySelectorAll(".toast")).forEach(
-        (toastNode) => new Toast(toastNode)
-      );
-    </script>
+    <!-- Validate -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>
